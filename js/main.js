@@ -96,13 +96,13 @@ window.onload = function() {
     {
         target2 = group2.create(game.world.width + 150, 300, 'target2');
         target2.body.velocity.x = -185;
-        target2.lifespan = 2000;
+        target2.lifespan = 7500;
     }
     
     function sendTarget3()
     {
         target3 = group3.create(-150, 150, 'target3');
         target3.body.velocity.x = 220;
-        target3.lifespan = 1000;
+        target3.lifespan = 5000;
     }
 };
