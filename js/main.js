@@ -86,7 +86,7 @@ window.onload = function() {
     	{
     		nextFire = game.time.now + fireRate;
 	    	bullet = game.add.sprite(game.input.activePointer.x, game.input.activePointer.y, 'bullet');
-	    	bullet.lifespan = 1000;
+	    	bullet.lifespan = 100;
     	}
     }
     
