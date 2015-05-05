@@ -38,6 +38,12 @@ window.onload = function() {
     var fireRate = 100;
     var nextFire = 0;
     
+    var timeText;
+    var scoreText;
+    var gameoverText;
+    var score = 0;
+    var timer = 120;
+    
     function create() 
     {
         game.physics.startSystem(Phaser.Physics.ARCADE);
@@ -54,6 +60,14 @@ window.onload = function() {
         crossGroup.enableBody = true;
         crosshair = crossGroup.create(game.input.activePointer.x, game.input.activePointer.y, 'crosshair');
         
+        scoreText = game.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
+		
+	timeText = game.add.text(300, 16, 'Time: 2:00' , { fontSize: '32px', fill: '#000' });
+	
+	game.time.events.loop(Phaser.Timer.SECOND, updateTimer, this);
+		
+	game.time.events.loop(Phaser.Timer.SECOND * timer, gameover, this);
+        
         game.time.events.loop(Phaser.Timer.SECOND * 3, sendTarget1, this);
         game.time.events.loop(Phaser.Timer.SECOND * 5, sendTarget2, this);
         game.time.events.loop(Phaser.Timer.SECOND * 7, sendTarget3, this);
@@ -61,6 +75,9 @@ window.onload = function() {
     
     function update() 
     {
+    	game.physics.arcade.overlap(bullet, target1, hit1, null, this);
+    	game.physics.arcade.overlap(bullet, target2, hit2, null, this);
+    	game.physics.arcade.overlap(bullet, target3, hit3, null, this);
         if (game.physics.arcade.overlap(crosshair, group1) || game.physics.arcade.overlap(crosshair, group2) || game.physics.arcade.overlap(crosshair, group3))
         {
         	crosshair.tint = 0xFF0000;
@@ -110,4 +127,49 @@ window.onload = function() {
         target3.body.velocity.x = 220;
         target3.lifespan = 5000;
     }
+    
+    function hit1(bullet, target1)
+    {
+    	target1.destroy();
+    	score+= 1;
+    	updateScore();
+    }
+    
+    function hit2(bullet, target2)
+    {
+    	target2.destroy();
+    	score+= 3;
+    	updateScore();
+    }
+    
+    function hit3(bullet, target3)
+    {
+    	target3.destroy();
+    	score+= 5;
+    	updateScore();
+    }
+    
+    function updateScore()
+    {
+    	scoreText.text = 'score: ' + score;
+    }
+    
+    function updateTimer()
+	{
+		timer--;
+		if (timer % 60 == 0)
+		{
+			timeText.text = 'Time: ' + Math.floor(timer/60) + ':00';
+		}
+		else
+		{
+			timeText.text = 'Time: ' + Math.floor(timer/60) + ':' + timer % 60;
+		}
+	}
+	
+	function gameover()
+	{
+		this.game.paused = true;
+		gameoverText = game.add.text(350, 300, 'Game Over', { fontSize: '128px', fill: '#000' });
+	}
 };
