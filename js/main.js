@@ -80,7 +80,7 @@ window.onload = function() {
     
     function onTarget()
     {
-    	crosshair.tint = 0xff0000;
+    	crossGroup.set(crosshair, 'crosshair.tint', 0xFF0000)
     }
     
     function sendTarget1()
