@@ -77,15 +77,18 @@ window.onload = function() {
     function sendTarget1()
     {
         target1 = group1.create(-150, 450, 'target1');
+        target1.body.velocity.x = 90;
     }
     
     function sendTarget2()
     {
         target2 = group2.create(-150, 300, 'target2');
+        target2.body.velocity.x = 135;
     }
     
     function sendTarget3()
     {
         target3 = group3.create(-150, 150, 'target3');
+        target3.body.velocity.x = 180;
     }
 };
