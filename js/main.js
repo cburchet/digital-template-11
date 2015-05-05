@@ -61,7 +61,7 @@ window.onload = function() {
     
     function update() 
     {
-        if (game.physics.arcade.overlap(crosshair, group1))
+        if (game.physics.arcade.overlap(crosshair, group1) || game.physics.arcade.overlap(crosshair, group2) || game.physics.arcade.overlap(crosshair, group3))
         {
         	crosshair.tint = 0xFF0000;
         }
@@ -81,31 +81,28 @@ window.onload = function() {
     	{
     		nextFire = game.time.now + fireRate;
 	    	bullet = game.add.sprite(game.input.activePointer.x, game.input.activePointer.y, 'bullet');
-	    	bullet.lifespan = 50;
+	    	bullet.lifespan = 100;
     	}
-    }
-    
-    function onTarget()
-    {
-    	crosshair.tint = 0xFF0000;
-    	//crossGroup.set(crosshair, 'crosshair.tint', 0xFF0000);
     }
     
     function sendTarget1()
     {
         target1 = group1.create(-150, 450, 'target1');
         target1.body.velocity.x = 150;
+        target1.lifespan = 1000;
     }
     
     function sendTarget2()
     {
-        target2 = group2.create(-150, 300, 'target2');
-        target2.body.velocity.x = 185;
+        target2 = group2.create(game.world.width + 150, 300, 'target2');
+        target2.body.velocity.x = -185;
+        target1.lifespan = 1000;
     }
     
     function sendTarget3()
     {
         target3 = group3.create(-150, 150, 'target3');
         target3.body.velocity.x = 220;
+        target1.lifespan = 500;
     }
 };
