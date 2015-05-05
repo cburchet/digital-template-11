@@ -23,8 +23,10 @@ window.onload = function() {
         game.load.image( 'target3', 'assets/target3.png' );
         game.load.image('bullet', 'assets/bullet.png');
         game.load.audio('music', 'assets/circus.mp3');
+        game.load.image('background', 'assets/background.jpg');
     }
     
+    var background;
     var crosshair;
     var crossGroup;
     
@@ -51,6 +53,7 @@ window.onload = function() {
     {
         game.physics.startSystem(Phaser.Physics.ARCADE);
         
+        background = game.add.tileSprite(0, 0, 800, 600, 'background');
         
         group1 = game.add.group();
         group1.enableBody = true;
