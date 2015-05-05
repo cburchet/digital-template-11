@@ -40,8 +40,6 @@ window.onload = function() {
     {
         game.physics.startSystem(Phaser.Physics.ARCADE);
         
-        crosshair = game.add.sprite(game.input.activePointer.x, game.input.activePointer.y, 'crosshair');
-       // crosshair.scale.setTo(.25);
         
         group1 = game.add.group();
         group1.enableBody = true;
@@ -50,6 +48,8 @@ window.onload = function() {
         group3 = game.add.group();
         group3.enableBody = true;
         
+        
+        crosshair = game.add.sprite(game.input.activePointer.x, game.input.activePointer.y, 'crosshair');
         
         game.time.events.loop(Phaser.Timer.SECOND * 3, sendTarget1, this);
         game.time.events.loop(Phaser.Timer.SECOND * 5, sendTarget2, this);
@@ -72,6 +72,11 @@ window.onload = function() {
 	    	bullet = game.add.sprite(game.input.activePointer.x, game.input.activePointer.y, 'bullet');
 	    	bullet.lifespan = 50;
     	}
+    }
+    
+    function onTarget()
+    {
+    	crosshair.tint = 0xff00ff;
     }
     
     function sendTarget1()
