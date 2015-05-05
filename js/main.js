@@ -54,7 +54,6 @@ window.onload = function() {
         game.physics.startSystem(Phaser.Physics.ARCADE);
         
         background = game.add.tileSprite(0, 0, 800, 600, 'background');
-        background.resize();
         
         group1 = game.add.group();
         group1.enableBody = true;
