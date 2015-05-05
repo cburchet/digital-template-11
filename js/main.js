@@ -70,6 +70,11 @@ window.onload = function() {
         	crosshair.tint = 0xFFFFFF;
         }
         
+        if (game.input.activePointer.isDown)
+	{
+		fire();
+	}
+        
         crosshair.x = game.input.activePointer.x - 16;
         crosshair.y = game.input.activePointer.y - 16; 
 
