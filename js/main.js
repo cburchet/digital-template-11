@@ -51,6 +51,7 @@ window.onload = function() {
         group3.enableBody = true;
         
         crossGroup = game.add.group();
+        crossGroup.enableBody = true;
         crosshair = crossGroup.create(game.input.activePointer.x, game.input.activePointer.y, 'crosshair');
         
         game.time.events.loop(Phaser.Timer.SECOND * 3, sendTarget1, this);
