@@ -25,6 +25,8 @@ window.onload = function() {
     }
     
     var crosshair;
+    var crossGroup;
+    
     var group1;
     var target1;
     var group2;
@@ -48,8 +50,8 @@ window.onload = function() {
         group3 = game.add.group();
         group3.enableBody = true;
         
-        
-        crosshair = game.add.sprite(game.input.activePointer.x, game.input.activePointer.y, 'crosshair');
+        crossGroup = game.add.group();
+        crosshair = crossGroup.create(game.input.activePointer.x, game.input.activePointer.y, 'crosshair');
         
         game.time.events.loop(Phaser.Timer.SECOND * 3, sendTarget1, this);
         game.time.events.loop(Phaser.Timer.SECOND * 5, sendTarget2, this);
