@@ -75,9 +75,9 @@ window.onload = function() {
     
     function update() 
     {
-    	game.physics.arcade.overlap(bullet, target1, hit1, null, this);
-    	game.physics.arcade.overlap(bullet, target2, hit2, null, this);
-    	game.physics.arcade.overlap(bullet, target3, hit3, null, this);
+    	game.physics.arcade.overlap(bullet, group1, hit1, null, this);
+    	game.physics.arcade.overlap(bullet, group2, hit2, null, this);
+    	game.physics.arcade.overlap(bullet, group3, hit3, null, this);
         if (game.physics.arcade.overlap(crosshair, group1) || game.physics.arcade.overlap(crosshair, group2) || game.physics.arcade.overlap(crosshair, group3))
         {
         	crosshair.tint = 0xFF0000;
