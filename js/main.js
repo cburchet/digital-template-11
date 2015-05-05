@@ -76,16 +76,16 @@ window.onload = function() {
     
     function sendTarget1()
     {
-        
+        target1 = group1.create(-150, 450, 'target1');
     }
     
     function sendTarget2()
     {
-        
+        target2 = group2.create(-150, 300, 'target2');
     }
     
     function sendTarget3()
     {
-        
+        target3 = group3.create(-150, 150, 'target3');
     }
 };
