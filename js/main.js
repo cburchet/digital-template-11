@@ -51,8 +51,8 @@ window.onload = function() {
         group3.enableBody = true;
         
         
-        game.time.events.loop(Phaser.Timer.SECOND * 2, sendTarget1, this);
-        game.time.events.loop(Phaser.Timer.SECOND * 4, sendTarget2, this);
+        game.time.events.loop(Phaser.Timer.SECOND * 3, sendTarget1, this);
+        game.time.events.loop(Phaser.Timer.SECOND * 5, sendTarget2, this);
         game.time.events.loop(Phaser.Timer.SECOND * 7, sendTarget3, this);
     }
     
@@ -77,18 +77,18 @@ window.onload = function() {
     function sendTarget1()
     {
         target1 = group1.create(-150, 450, 'target1');
-        target1.body.velocity.x = 90;
+        target1.body.velocity.x = 150;
     }
     
     function sendTarget2()
     {
         target2 = group2.create(-150, 300, 'target2');
-        target2.body.velocity.x = 135;
+        target2.body.velocity.x = 185;
     }
     
     function sendTarget3()
     {
         target3 = group3.create(-150, 150, 'target3');
-        target3.body.velocity.x = 180;
+        target3.body.velocity.x = 220;
     }
 };
