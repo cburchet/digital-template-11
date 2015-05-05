@@ -41,7 +41,7 @@ window.onload = function() {
         game.physics.startSystem(Phaser.Physics.ARCADE);
         
         crosshair = game.add.sprite(game.input.activePointer.x, game.input.activePointer.y, 'crosshair');
-        crosshair.scale.setTo(.25);
+       // crosshair.scale.setTo(.25);
         
         group1 = game.add.group();
         group1.enableBody = true;
