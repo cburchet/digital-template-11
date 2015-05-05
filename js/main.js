@@ -60,9 +60,9 @@ window.onload = function() {
         crossGroup.enableBody = true;
         crosshair = crossGroup.create(game.input.activePointer.x, game.input.activePointer.y, 'crosshair');
         
-        scoreText = game.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#FF00' });
+        scoreText = game.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: 'red' });
 		
-	timeText = game.add.text(300, 16, 'Time: 2:00' , { fontSize: '32px', fill: '#FF00' });
+	timeText = game.add.text(300, 16, 'Time: 2:00' , { fontSize: '32px', fill: 'red' });
 	
 	game.time.events.loop(Phaser.Timer.SECOND, updateTimer, this);
 		
@@ -171,6 +171,6 @@ window.onload = function() {
 	function gameover()
 	{
 		this.game.paused = true;
-		gameoverText = game.add.text(350, 300, 'Game Over', { fontSize: '128px', fill: '#FF00' });
+		gameoverText = game.add.text(350, 300, 'Game Over', { fontSize: '128px', fill: 'red' });
 	}
 };
