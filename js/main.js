@@ -89,7 +89,7 @@ window.onload = function() {
     {
         target1 = group1.create(-150, 450, 'target1');
         target1.body.velocity.x = 150;
-        target1.lifespan = 1000;
+        target1.lifespan = 10000;
     }
     
     function sendTarget2()
