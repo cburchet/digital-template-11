@@ -22,6 +22,7 @@ window.onload = function() {
         game.load.image( 'target2', 'assets/target2.png' );
         game.load.image( 'target3', 'assets/target3.png' );
         game.load.image('bullet', 'assets/bullet.png');
+        game.load.audio('music', 'assets/circus.mp3');
     }
     
     var crosshair;
@@ -43,6 +44,8 @@ window.onload = function() {
     var gameoverText;
     var score = 0;
     var timer = 120;
+    
+    var music;
     
     function create() 
     {
@@ -71,6 +74,9 @@ window.onload = function() {
         game.time.events.loop(Phaser.Timer.SECOND * 3, sendTarget1, this);
         game.time.events.loop(Phaser.Timer.SECOND * 5, sendTarget2, this);
         game.time.events.loop(Phaser.Timer.SECOND * 7, sendTarget3, this);
+        
+        music = game.add.audio('music');
+	music.play('', 0, .1, true);
     }
     
     function update() 
