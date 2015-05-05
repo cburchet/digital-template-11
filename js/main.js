@@ -58,8 +58,8 @@ window.onload = function() {
     function update() 
     {
         
-        crosshair.x = game.input.activePointer.x - 64;
-        crosshair.y = game.input.activePointer.y - 64; 
+        crosshair.x = game.input.activePointer.x - 128;
+        crosshair.y = game.input.activePointer.y - 128; 
 
     }
     
