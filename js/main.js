@@ -61,7 +61,7 @@ window.onload = function() {
     function update() 
     {
     	crosshair.tint = 0xFFFFFF;
-        game.physics.arcade.overlap(crosshair, group1, onTarget, null, this);
+        game.physics.arcade.overlap(crossGroup, group1, onTarget, null, this);
         
         crosshair.x = game.input.activePointer.x - 16;
         crosshair.y = game.input.activePointer.y - 16; 
@@ -80,7 +80,7 @@ window.onload = function() {
     
     function onTarget()
     {
-    	crosshair.tint = 0xff00ff;
+    	crosshair.tint = 0xff0000;
     }
     
     function sendTarget1()
