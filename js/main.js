@@ -80,7 +80,7 @@ window.onload = function() {
         game.time.events.loop(Phaser.Timer.SECOND * 7, sendTarget3, this);
         
         music = game.add.audio('music');
-	music.play('', 0, .1, true);
+	music.play('', 'music', .1, true);
     }
     
     function update() 
